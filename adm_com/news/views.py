@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 
 
 def index(request):
-    return render(request, 'Привет!')
+    template = 'news/index.html'
+    return render(request, template)
