@@ -1,1 +1,9 @@
 <!--Основная шапка сайта-->
+{% load static %}
+<nav class="navbar">
+  <div class="container">
+    <a class="navbar-brand" href="{% url 'news:index' %}">
+      <img src="{% static 'img/home.png' %}" width="30" height="30">
+    </a>
+  </div>
+</nav>
