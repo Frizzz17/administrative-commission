@@ -2,3 +2,8 @@
     background-color: rgb(0, 15, 130);
     box-shadow: 20px 5px 10px rgba(0, 14, 168, 0.208);
 }
+
+.author {
+    text-align: right;
+    background-color: red;
+}

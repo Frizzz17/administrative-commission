@@ -1,15 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
-  <div class="card col-6">
-    <h5 class="card-header">Аксентий Поприщин</h5>  
-    <div class="card-body">
-      <h6 class="card-subtitle">43 апреля 2000 года</h6>
-      <p>
-        Сегодняшний день — есть день величайшего торжества!
-        В Испании есть король. Он отыскался. Этот король я.
-        Именно только сегодня об этом узнал я.
-      </p>
-      <a href="" class="btn btn-primary">Читать целиком</a>
+  {% load static %}
+  <div class="author">dddddddddd</div>
+  {% for article in articles_list %}
+    <div class="container">
+      <div class="row">
+        <div class="col-12" style="background-color: red">
+          <h1> {{ article.header }} </h1>
+          <p> {{ article.text }} </p>
+          <div class="row">
+            <div class="col-9">Автор бла-бла</div>
+            {% comment %} <div class="col-3"><img src="{% static '' %}"></div> {% endcomment %}
+          </div>
+        </div>
+      </div>
     </div>
-  </div> 
+  {% endfor %}
 {% endblock %}
