@@ -1,17 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
   {% load static %}
-  <div class="author">dddddddddd</div>
   {% for article in articles_list %}
     <div class="container">
       <div class="row">
-        <div class="col-12" style="background-color: red">
-          <h1> {{ article.header }} </h1>
-          <p> {{ article.text }} </p>
-          <div class="row">
-            <div class="col-9">Автор бла-бла</div>
-            {% comment %} <div class="col-3"><img src="{% static '' %}"></div> {% endcomment %}
-          </div>
+        <div class="col-12">
+          <div class="message">
+            <h1> {{ article.header }} </h1>
+            <p> {{ article.text }} </p>
+          </div> <!--Cообщение-->
+          <span class="author"><img src="{% static 'img/person.png' %}"></span>
+          <span>Автор бла-бла</span>
         </div>
       </div>
     </div>
