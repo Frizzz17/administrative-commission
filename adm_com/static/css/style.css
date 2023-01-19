@@ -15,6 +15,18 @@ body {
     box-shadow: 2px 2px 2px;
 }
 
+.nav-link {
+    color: rgb(216, 200, 200);
+}
+
+.navbar-nav {
+    float: right;
+}
+
+.active {
+    border-bottom: solid white 3px;
+}
+
 .author {
     color: aqua;
 }

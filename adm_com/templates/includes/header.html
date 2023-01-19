@@ -1,9 +1,31 @@
 <!--Основная шапка сайта-->
 {% load static %}
-<nav class="navbar">
+<nav class="navbar navbar-expand-lg">
   <div class="container">
     <a class="navbar-brand" href="{% url 'news:index' %}">
       <img src="{% static 'img/home.png' %}" width="30" height="30">
     </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> <!--Тугл кнопка для телефонов-->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#"> О комиссии </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Состав</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Материалы</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Логин</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Пароль</a>
+        </li>
+      </ul> <!--Ссылки на основные странички-->
+    </div>
   </div>
 </nav>
