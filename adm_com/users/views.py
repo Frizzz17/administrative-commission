@@ -5,7 +5,7 @@ from django.urls import reverse_lazy
 from users.forms import CreateUserForm
 
 
-class SignUp(CreateView):
+class NewUser(CreateView):
     form_class = CreateUserForm
     success_url = reverse_lazy('news:index')
-    template_name = 'users/signup.html'
+    template_name = 'users/reg_user.html'
