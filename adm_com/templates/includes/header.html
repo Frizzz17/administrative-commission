@@ -33,5 +33,10 @@
         </li>
       </ul> <!--Ссылки на основные странички-->
     </div>
-  </div>
+    {% if user.is_authenticated %}
+      <form method="get"  action="{% url 'users:logout' %}" class="form-inline">
+        <button class="btn" type="submit">Выход</button>
+      </form>
+    {% endif %}
+  </div> <!-- container -->
 </nav>
