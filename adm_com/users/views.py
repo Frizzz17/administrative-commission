@@ -21,6 +21,6 @@ class NewUser(CreateView):
     def post(self, request, *args, **kwargs):
         '''Проверяет является ли пользователь администратором и отдает post. '''
         self.object = None
-        if request.request.is_autenticated:
+        if request.user.is_authenticated:
             return super().post(request, *args, **kwargs)
         return redirect('users:login')
