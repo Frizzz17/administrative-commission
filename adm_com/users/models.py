@@ -8,10 +8,9 @@ class User(AbstractUser):
     position = models.CharField(_("Должность"), max_length=300, blank=True)
 
 
-
 class Role(models.Model):
     title = models.CharField(
-        max_length=200, 
+        max_length=200,
         verbose_name='Роль в административной комиссии'
     )
     user = models.ManyToManyField(User, through='RoleUser')
