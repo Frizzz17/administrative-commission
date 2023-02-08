@@ -10,6 +10,3 @@ class News(models.Model):
         User,
         on_delete=models.CASCADE
     )
-
-class New:
-    pass
