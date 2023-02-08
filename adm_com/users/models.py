@@ -8,6 +8,7 @@ class User(AbstractUser):
     position = models.CharField(_("Должность"), max_length=300, blank=True)
 
 
+
 class Role(models.Model):
     title = models.CharField(
         max_length=200, 
