@@ -1,6 +1,6 @@
 from django.urls import path
 from django.contrib.auth.views import LogoutView, LoginView
-from users.views import NewUser
+from users.views import NewUser, role_for_user, del_role_for_user
 
 
 app_name = 'users'
@@ -17,5 +17,7 @@ urlpatterns = [
         'login/',
         LoginView.as_view(template_name='users/login.html'),
         name='login'
-    )
+    ),
+    path('role/', role_for_user, name='role'),
+    path('role/del_role/', del_role_for_user, name='del_role')
 ]
