@@ -6,17 +6,18 @@
       <div class="col-md-6 p-5">
         <div class="card">
           <div class="card-header">
-            <p><i>Фризен Андрей Валерьевич</i></p>
-            <p><i>Ответственный секретарь административной комиссии</i></p>
+            <p><i>{{ user.first_name }} {{ user.middle_name }} {{ user.last_name }}</i></p>
+            <p><i>{{ user.position }}</i></p>
           </div>
           <div class="card-body">
             <p>Роль пользователя в админисративной комиссии</p>
             {% for role in roles %}
               {% if role %}
                 {% if forloop.last %}
-                  <form action="{% url 'users:del_role' %}">
+                  <form action="{% url 'users:del_role' user.username %}">
                     {% csrf_token %}
-                    <span>{{ role }}</span><button>del</button>
+                    {% load static %}
+                    <span>{{ role }}</span><button><img src="{% static 'img/cross.png' %}"></button>
                   </form>
                 {% endif %}
                 {% if not forloop.last %}
@@ -24,10 +25,11 @@
                 {% endif %}
               {% endif %}
             {% endfor %}
-            <form method= "post" action="{% url 'users:role' %}">
+            <form method= "post" action="{% url 'users:roles' user.username %}">
                 {% csrf_token %}
                 {% for field in form %}
-                <span>{{ field }}</span> <span><button>add</button></span>
+                {% load static %}
+                <span>{{ field }}</span> <button><img src="{% static 'img/accept.png' %}"></button>
                 {% endfor %}
             <form>
           </div>

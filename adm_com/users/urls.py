@@ -18,6 +18,6 @@ urlpatterns = [
         LoginView.as_view(template_name='users/login.html'),
         name='login'
     ),
-    path('role/', role_for_user, name='role'),
-    path('role/del_role/', del_role_for_user, name='del_role')
+    path('roles/<str:username>/', role_for_user, name='roles'),
+    path('roles/del_role/<str:username>', del_role_for_user, name='del_role')
 ]
